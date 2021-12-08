@@ -122,9 +122,9 @@ addressBookArray.push(editContact);
 console.log(addressBookArray);
 
 //UC5-Delete Contact with name
+let delContact=new AddressBook();
 function deleteContact()
 {
-    let delContact=new AddressBook();
     delContact.lastName='Muthu';
     if(delContact.lastName == newContact.lastName)
     {
@@ -133,3 +133,16 @@ function deleteContact()
     } 
 }deleteContact();
 console.log(addressBookArray);
+
+//UC6-Find Number Of Contact In array using reduce
+const countContact=addressBookArray.reduce(function(contact,details)  //store array in key , value pair
+{
+    if(typeof contact[details] == 'undefined')
+    {
+        contact[details] = 1;
+    }
+    else{
+        contact[details] += 1;
+    }
+    console.log(contact);
+});
