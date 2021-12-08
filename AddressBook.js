@@ -98,13 +98,13 @@ function addNewContactToArray()
 {
     newContact.firstName='Praveen'; newContact.lastName='Muthu'; newContact.address='Happ'; newContact.city='Trichy'; newContact.state='Tamil Nadu'; 
     newContact.zip=620025; newContact.phoneNumber="91 7854269872"; newContact.email="praveen@gmail.com";
-    addressBookArray.push(newContact);
 }addNewContactToArray();
+addressBookArray.push(newContact);
 
 //UC4-Edit Person Contact Using Name
+let editContact=new AddressBook();
 function editContactInArray()
 {
-    let editContact=new AddressBook();
     editContact.firstName='Praveen';
     if(editContact.firstName == newContact.firstName)
     {
@@ -115,8 +115,21 @@ function editContactInArray()
         editContact.phoneNumber='91 7397512233';
         editContact.email='praveenmuthu@gmail.com';
         console.log("Edited Contact Details Using First Name");
-        addressBookArray.push(editContact);
+        
     }
 } editContactInArray();
+addressBookArray.push(editContact);
+console.log(addressBookArray);
 
+//UC5-Delete Contact with name
+function deleteContact()
+{
+    let delContact=new AddressBook();
+    delContact.lastName='Muthu';
+    if(delContact.lastName == newContact.lastName)
+    {
+       addressBookArray.splice(1,1);
+       console.log("Contact with lastName Muthu is removed");
+    } 
+}deleteContact();
 console.log(addressBookArray);
