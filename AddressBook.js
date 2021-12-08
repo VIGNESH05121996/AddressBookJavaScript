@@ -89,14 +89,34 @@ catch(e)
 {
     console.error(e);
 }
-addressBookArray.push(addressBook.displayDetails());
+addressBookArray.push(addressBook);
 }validateAddress();
 
+let newContact=new AddressBook();
 //UC3-Create AddressBook Array and add new contact
 function addNewContactToArray()
 {
-    let newContact=new AddressBook();
     newContact.firstName='Praveen'; newContact.lastName='Muthu'; newContact.address='Happ'; newContact.city='Trichy'; newContact.state='Tamil Nadu'; 
     newContact.zip=620025; newContact.phoneNumber="91 7854269872"; newContact.email="praveen@gmail.com";
-    addressBookArray.push(newContact.displayDetails());
+    addressBookArray.push(newContact);
 }addNewContactToArray();
+
+//UC4-Edit Person Contact Using Name
+function editContactInArray()
+{
+    let editContact=new AddressBook();
+    editContact.firstName='Praveen';
+    if(editContact.firstName == newContact.firstName)
+    {
+        editContact.lastName='Marimuthu';
+        editContact.address='NGO Colony';
+        editContact.city='Dindigul';
+        editContact.state='Tamil Nadu';
+        editContact.phoneNumber='91 7397512233';
+        editContact.email='praveenmuthu@gmail.com';
+        console.log("Edited Contact Details Using First Name");
+        addressBookArray.push(editContact);
+    }
+} editContactInArray();
+
+console.log(addressBookArray);
