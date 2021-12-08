@@ -1,4 +1,5 @@
 //UC1-Create Address Book
+let addressBookArray=new Array();
 class AddressBook
 {
     firstName;
@@ -27,6 +28,9 @@ class AddressBook
         console.log("\nFirstName: "+this.firstName+"\nLastName: "+this.lastName+"\nAddress: "+this.address+"\nCity: "+this.city+"\nState: "+this.state+"\nZip: "+this.zip+"\nPhoneNumber: "+this.phoneNumber+"\nEmail: "+this.email);
     }
 }
+
+function validateAddress()
+{
 let addressBook=new AddressBook();
 //To test First name and Last name
 try{
@@ -85,3 +89,14 @@ catch(e)
 {
     console.error(e);
 }
+addressBookArray.push(addressBook.displayDetails());
+}validateAddress();
+
+//UC3-Create AddressBook Array and add new contact
+function addNewContactToArray()
+{
+    let newContact=new AddressBook();
+    newContact.firstName='Praveen'; newContact.lastName='Muthu'; newContact.address='Happ'; newContact.city='Trichy'; newContact.state='Tamil Nadu'; 
+    newContact.zip=620025; newContact.phoneNumber="91 7854269872"; newContact.email="praveen@gmail.com";
+    addressBookArray.push(newContact.displayDetails());
+}addNewContactToArray();
